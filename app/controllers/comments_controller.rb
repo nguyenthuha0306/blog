@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
 		@comment = @entry.comments.build(comment_params)
 		debugger
 		if @comment.save
-			flash[:success] = "Comment created!"
+			flash[:success] = "Comment created sccessfully!"
 			redirect_to @entry
 		else
 			#@feed_items= []

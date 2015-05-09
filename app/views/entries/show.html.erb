@@ -12,6 +12,16 @@
 	</span>
 </div>
 
+<div class="col-md-8">
+    <% if @entry.comments.any? %>
+      <h3> Comment (<%= @entry.comments.count %>)</h3>
+      <ol class="comments">
+        <%= render @comments %>
+      </ol>
+      <%= will_paginate @comments %>
+    <% end %>
+ </div>
+
 <div >
 	<%= render 'shared/comment_form' %>
 </div>

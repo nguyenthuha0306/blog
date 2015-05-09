@@ -1,7 +1,8 @@
 class CommentsController < ApplicationController
+	before_action :signed_in_user, only: [:create, :destroy]
 	def create
 		@entry = Entry.find(params[:comment][:entry_id])
-		@comment = @entry.comments.build(comment_params)
+		@comment = current_user.comments.build(comment_params)
 		debugger
 		if @comment.save
 			flash[:success] = "Comment created sccessfully!"

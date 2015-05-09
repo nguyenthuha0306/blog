@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20150509025407) do
     t.datetime "updated_at", null: false
   end
 
+  add_index "comments", ["entry_id", "created_at"], name: "index_comments_on_entry_id_and_created_at"
   add_index "comments", ["entry_id"], name: "index_comments_on_entry_id"
 
   create_table "entries", force: :cascade do |t|

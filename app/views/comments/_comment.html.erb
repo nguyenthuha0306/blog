@@ -1,0 +1,9 @@
+<li id="comment-<%= comment.id %>">
+  <%= link_to gravatar_for(comment.user), comment.user %>
+  
+  <span class="name"><%= comment.name %></span>
+  <span class="content"><%= comment.content %></span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(comment.created_at) %> ago.
+  </span>
+</li>

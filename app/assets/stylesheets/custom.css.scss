@@ -206,9 +206,8 @@ input {
   }
 }
 
-/* microposts */
-
-.microposts {
+/* entries */
+.entries {
   list-style: none;
   padding: 0;
   li {
@@ -219,20 +218,19 @@ input {
     margin-top: 5em;
     padding-top: 0;
   }
-
-  
   .body {
     display: block;
     margin-left: 60px;
     img {
       display: block;
-      padding: 5px 0;
+      padding: 0px 0;
     }
   }
   .timestamp {
     color: $gray-light;
     display: block;
     margin-left: 60px;
+    
   }
   .gravatar {
     float: left;
@@ -291,4 +289,11 @@ span.picture {
 
 .users.follow {
   padding: 0;
+}
+
+.title{
+  font-size: 20px;
+}
+.name{
+ font-family: myFirstFont;
 }

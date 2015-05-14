@@ -3,7 +3,9 @@
 	<div class="field">
 		<%= f.text_field :name, placeholder: "Name..."%>
 		<%= f.text_area :content, placeholder: "Compose new comment..."%>
-		<%= hidden_field(:comment, :entry_id) %>
+		
+		<%= f.hidden_field :entry_id, :value => @entry.id %>
+		
 	</div>
 	<%= f.submit "Comment", class: "btn btn-primary" %>
 <% end %>

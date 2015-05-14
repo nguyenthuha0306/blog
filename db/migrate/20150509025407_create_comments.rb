@@ -4,9 +4,10 @@ class CreateComments < ActiveRecord::Migration
       t.text :content
       t.string :name
       t.references :entry, index: true, foreign_key: true
-
+      
       t.timestamps null: false
     end
       add_index :comments, [:entry_id, :created_at]
+      
   end
 end

@@ -1,26 +1,24 @@
 <div id="@entry-<%= @entry.id %>">
-	<%= link_to gravatar_for(@entry.user), @entry.user %>
-	<span class="user"><%= link_to @entry.user.name, @entry.user  %></span>
-	<span class="title"><h2><%= @entry.title %></h2></span>
-	<span class="body">
-		<%= @entry.body %>
-		<%= image_tag @entry.picture.url if @entry.picture? %>
-	</span>
-	<br />
-	<span class="timestamp"> <h2>
-		Posted <%= time_ago_in_words(@entry.created_at) %> ago.</h2>
-	</span>
+  <%= link_to gravatar_for @entry.user, @entry.user %>
+  <span class="user"><%= link_to @entry.user.name, @entry.user  %></span>
+  <span class="title"><h2><%= @entry.title %></h2></span>
+  <span class="body">
+    <%= @entry.body %>
+    <%= image_tag @entry.picture.url if @entry.picture? %>
+  </span>
+  <br />
+  <span class="timestamp"> <h2>
+    Posted <%= time_ago_in_words @entry.created_at %> ago.</h2>
+  </span>
 </div>
 
-
-
 <div >
-	<%= render 'shared/comment_form' %>
+  <%= render "shared/comment_form" %>
 </div>
 
 <div >
     <% if @entry.comments.any? %>
-      <h3> Comment (<%= @entry.comments.count %>)</h3>
+      <h3> Comment <%= @entry.comments.count %> </h3>
       <ol class="comments">
         <%= render @comments %>
       </ol>
